@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact ParentalAssist - Get in Touch">
+  <title>Contact Us - ParentalAssist</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+  <!-- HEADER & NAVIGATION -->
+  <header>
+    <div class="container">
+      <nav>
+        <a href="../index.html" class="logo">ParentalAssist</a>
+        <button class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="lessons.html">Video Lessons</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- PAGE HEADER -->
+  <section class="lesson-header">
+    <div class="container">
+      <h1>Get in Touch</h1>
+      <p style="font-size: 18px; opacity: 0.95;">We'd love to hear from you. Have a question, suggestion, or just want to say hello?</p>
+    </div>
+  </section>
+
+  <!-- CONTACT CONTENT -->
+  <section class="section section-light">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;">
+        <!-- CONTACT FORM -->
+        <div>
+          <h2>Send Us a Message</h2>
+          <form name="contact" method="POST" data-netlify="true">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" required>
+            </div>
+
+            <div class="form-group">
+              <label for="category">How can we help?</label>
+              <select id="category" name="category" required>
+                <option value="">Select a category...</option>
+                <option value="question">I have a question</option>
+                <option value="suggestion">I have a suggestion</option>
+                <option value="partnership">I'm interested in a partnership</option>
+                <option value="feedback">I have feedback</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+          </form>
+        </div>
+
+        <!-- CONTACT INFO -->
+        <div>
+          <h2>Other Ways to Connect</h2>
+
+          <div class="summary-box">
+            <h4>Email</h4>
+            <p><a href="mailto:hello@parentalassist.com">hello@parentalassist.com</a></p>
+            <p style="font-size: 14px; color: var(--medium-gray);">We read every message and try to respond within 48 hours.</p>
+          </div>
+
+          <div class="summary-box">
+            <h4>I Have a Specific Challenge</h4>
+            <p>Let us know what parenting challenge you're facing. We use your feedback to create new video lessons on topics parents care about.</p>
+          </div>
+
+          <div class="summary-box">
+            <h4>Partnerships & Collaborations</h4>
+            <p>Are you an educator, therapist, or organization interested in partnering with us? We'd love to talk.</p>
+          </div>
+
+          <div class="summary-box">
+            <h4>Stay Updated</h4>
+            <p>Want to be notified about new lessons and resources? <a href="../index.html#signup-form">Sign up for our email list</a>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section class="section section-accent">
+    <div class="container container-narrow">
+      <h2 style="text-align: center; margin-bottom: 2rem;">Quick Questions?</h2>
+
+      <details style="background-color: white; padding: 2rem; margin-bottom: 1rem; border-radius: 8px;">
+        <summary style="cursor: pointer; font-weight: 600; color: var(--primary-blue-dark); font-size: 18px;">
+          How long does it take to see results?
+        </summary>
+        <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--light-gray); color: var(--dark-gray);">
+          <p>Every family is different, but most parents report noticing improvements within 1-2 weeks of consistently using our strategies. Some see changes in specific situations (like homework time) within days.</p>
+        </div>
+      </details>
+
+      <details style="background-color: white; padding: 2rem; margin-bottom: 1rem; border-radius: 8px;">
+        <summary style="cursor: pointer; font-weight: 600; color: var(--primary-blue-dark); font-size: 18px;">
+          Can I share these lessons with other parents?
+        </summary>
+        <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--light-gray); color: var(--dark-gray);">
+          <p>Absolutely! We encourage you to share ParentalAssist with other parents. You can share individual lessons, send people to our website, or suggest specific videos. The more parents we can reach, the better.</p>
+        </div>
+      </details>
+
+      <details style="background-color: white; padding: 2rem; margin-bottom: 1rem; border-radius: 8px;">
+        <summary style="cursor: pointer; font-weight: 600; color: var(--primary-blue-dark); font-size: 18px;">
+          What if you don't have a lesson for my situation?
+        </summary>
+        <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--light-gray); color: var(--dark-gray);">
+          <p>Get in touch! Tell us what challenge you're facing. We read every message and often create new lessons based on parent feedback. Your specific challenge might help us build something that helps thousands of other parents too.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>ParentalAssist</h4>
+          <p>Communication strategies for parents of high school students.</p>
+        </div>
+
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="lessons.html">Video Lessons</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="contact.html">Get in Touch</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 ParentalAssist. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

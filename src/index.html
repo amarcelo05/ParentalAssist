@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ParentalAssist - Communication strategies for parents of high school students. Video-based lessons on tackling homework battles, defusing arguments, and building stronger relationships.">
+  <meta name="keywords" content="parenting, communication, high school, teenagers, parent strategies">
+  <title>ParentalAssist - Helping Parents Communicate Better with High Schoolers</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <!-- HEADER & NAVIGATION -->
+  <header>
+    <div class="container">
+      <nav>
+        <a href="index.html" class="logo">ParentalAssist</a>
+        <button class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="pages/lessons.html">Video Lessons</a></li>
+          <li><a href="pages/about.html">About</a></li>
+          <li><a href="pages/contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="container container-narrow">
+      <div class="hero-content">
+        <h1>Helping You Get Your Kids to Listen—Without the Yelling</h1>
+        <p class="subtitle">Learn proven communication strategies that work with high school students. Practical, evidence-based video lessons from strategies that parents actually use.</p>
+        <button class="btn btn-primary btn-lg" onclick="document.getElementById('signup-form').scrollIntoView({behavior: 'smooth'})">Get Free Access to Our Blueprint</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- EMAIL CAPTURE SECTION -->
+  <section class="section section-neutral">
+    <div class="container container-narrow">
+      <div class="email-signup">
+        <h2>The High Schooler Translation Blueprint</h2>
+        <p>Get our free guide to understanding what your teen actually hears when you're trying to communicate. Learn the 5 biggest parenting communication mistakes and how to fix them.</p>
+        <form id="signup-form" name="signup" method="POST" data-netlify="true">
+          <div class="form-group">
+            <input 
+              type="text" 
+              name="name" 
+              placeholder="Your name" 
+              required
+              aria-label="Full name"
+            >
+          </div>
+          <div class="form-group">
+            <input 
+              type="email" 
+              name="email" 
+              placeholder="your@email.com" 
+              required
+              aria-label="Email address"
+            >
+          </div>
+          <button type="submit" class="btn btn-secondary btn-lg">Send Me the Blueprint</button>
+        </form>
+        <p style="font-size: 12px; margin-top: 1rem; opacity: 0.9;">We respect your privacy. Unsubscribe anytime.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- LATEST VIDEO LESSONS -->
+  <section class="section section-light">
+    <div class="container">
+      <h2 style="text-align: center; margin-bottom: 1rem;">Latest Video Lessons</h2>
+      <p style="text-align: center; color: var(--dark-gray); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+        Short, actionable video lessons broken down by the challenges parents face most. Watch, learn, and start applying today.
+      </p>
+      
+      <div class="grid grid-3" id="videoGrid">
+        <!-- Videos will be loaded here by JavaScript -->
+      </div>
+
+      <div style="text-align: center; margin-top: 2rem;">
+        <a href="pages/lessons.html" class="btn btn-outline">View All Lessons →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY PARENTALASSIST SECTION -->
+  <section class="section section-light">
+    <div class="container">
+      <h2 style="text-align: center; margin-bottom: 2rem;">Why ParentalAssist?</h2>
+      
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="card-header">
+            <h4>Video-First Learning</h4>
+          </div>
+          <p>See real examples of how to handle tough moments. No lengthy readings—just concise videos you can watch in 5-10 minutes.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h4>Built for Busy Parents</h4>
+          </div>
+          <p>Learn on your phone. Watch during your lunch break or before bed. Everything is designed for the parent who's juggling a lot.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h4>Actionable & Evidence-Based</h4>
+          </div>
+          <p>Every strategy is grounded in adolescent psychology and tested by real parents. You'll know exactly what to say and when to say it.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h4>High School Specific</h4>
+          </div>
+          <p>We focus on the unique challenges of early-to-mid high school: autonomy-seeking, independence, and shifting relationships.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h4>Free & Always Will Be</h4>
+          </div>
+          <p>Education should be accessible. Sign up for our email list to get free access to all lessons and future content.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h4>Community</h4>
+          </div>
+          <p>You're not alone. Connect with other parents facing the same struggles. Share wins, ask questions, and learn from each other.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMON STRUGGLES SECTION -->
+  <section class="section section-accent">
+    <div class="container container-narrow">
+      <h2 style="text-align: center; margin-bottom: 2rem;">Sound Familiar?</h2>
+      
+      <div class="summary-box">
+        <h4>The "Across the Room" Command</h4>
+        <p>You're shouting instructions from the kitchen while your teen is focused on their phone. They don't hear you—or, more likely, they do but don't respond.</p>
+      </div>
+
+      <div class="summary-box">
+        <h4>The Word Avalanche</h4>
+        <p>You ask them to do something and end up explaining why, giving context, and listing three other things they need to do—all in one breath.</p>
+      </div>
+
+      <div class="summary-box">
+        <h4>The Nagging Cycle</h4>
+        <p>You ask nicely. They ignore you. You ask again. Then you ask louder. Eventually, you're yelling, and they're rolling their eyes.</p>
+      </div>
+
+      <div class="summary-box">
+        <h4>Directing Before Connecting</h4>
+        <p>You launch straight into orders without first making a real connection. Their brain resists, and you're left frustrated.</p>
+      </div>
+
+      <p style="text-align: center; margin-top: 2rem; color: var(--primary-blue-dark); font-weight: 600;">
+        These are the problems we solve. And the good news? There are proven strategies that work.
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="section section-light">
+    <div class="container container-narrow">
+      <div class="email-signup" style="background: linear-gradient(135deg, #7a9d75 0%, #9fbf99 100%); text-align: center;">
+        <h2>Ready to Change How You Communicate?</h2>
+        <p>Get instant access to our free "High Schooler Translation Blueprint" and start seeing results this week.</p>
+        <button class="btn btn-primary btn-lg" style="width: 100%; max-width: 300px;" onclick="document.getElementById('signup-form').scrollIntoView({behavior: 'smooth'})">Get the Blueprint Today</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>ParentalAssist</h4>
+          <p>Communication strategies for parents of high school students.</p>
+        </div>
+
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="pages/lessons.html">Video Lessons</a></li>
+            <li><a href="pages/about.html">About Us</a></li>
+            <li><a href="pages/contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Popular Topics</h4>
+          <ul>
+            <li><a href="pages/lessons.html?topic=defusing">Defusing Arguments</a></li>
+            <li><a href="pages/lessons.html?topic=homework">Homework Battles</a></li>
+            <li><a href="pages/lessons.html?topic=listening">Active Listening</a></li>
+            <li><a href="pages/lessons.html?topic=autonomy">Respecting Autonomy</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 ParentalAssist. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

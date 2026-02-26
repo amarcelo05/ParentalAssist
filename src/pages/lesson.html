@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Video lesson - ParentalAssist">
+  <title>Lesson - ParentalAssist</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+  <!-- HEADER & NAVIGATION -->
+  <header>
+    <div class="container">
+      <nav>
+        <a href="../index.html" class="logo">ParentalAssist</a>
+        <button class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="lessons.html">Video Lessons</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <div class="container" style="padding-top: 2rem; padding-bottom: 0;">
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a>
+      <span>/</span>
+      <a href="lessons.html">Lessons</a>
+      <span>/</span>
+      <span id="lessonBreadcrumb">Lesson</span>
+    </div>
+  </div>
+
+  <!-- LESSON HEADER -->
+  <section class="lesson-header">
+    <div class="container">
+      <h1 id="lessonTitle">Lesson Title</h1>
+      <div class="lesson-meta" id="lessonMeta">
+        <!-- Populated by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- LESSON CONTENT -->
+  <section class="section section-light">
+    <div class="container">
+      <div class="lesson-content">
+        <!-- MAIN CONTENT -->
+        <div class="lesson-main">
+          <!-- VIDEO PLAYER -->
+          <div class="video-container" id="videoContainer">
+            <!-- Embedded video will go here -->
+          </div>
+
+          <!-- LESSON SUMMARY -->
+          <div id="lessonSummarySection">
+            <!-- Populated by JavaScript -->
+          </div>
+
+          <!-- KEY TAKEAWAYS -->
+          <div id="keyTakewaysSection">
+            <!-- Populated by JavaScript -->
+          </div>
+
+          <!-- TRANSCRIPT -->
+          <details style="background-color: #f8f7f5; padding: 1.5rem; border-radius: 8px; margin-top: 2rem;">
+            <summary style="cursor: pointer; font-weight: 600; color: var(--primary-blue-dark); padding: 0; margin: -1.5rem -1.5rem 0 -1.5rem; padding: 1.5rem;">
+              📝 Video Transcript
+            </summary>
+            <div style="margin-top: 1.5rem; font-size: 14px; line-height: 1.8; color: var(--dark-gray);" id="transcript">
+              Transcript will be populated here
+            </div>
+          </details>
+
+          <!-- CTA -->
+          <div style="background: linear-gradient(135deg, #f0f4f8 0%, #f8f7f5 100%); padding: 2rem; border-radius: 12px; margin-top: 3rem; text-align: center;">
+            <h3>Want More Strategies Like This?</h3>
+            <p>Join our email list to get access to all lessons and new content as we release it.</p>
+            <form name="lesson-cta" method="POST" data-netlify="true" style="max-width: 400px; margin: 1rem auto 0;">
+              <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                <input type="email" name="email" placeholder="your@email.com" required>
+                <button type="submit" class="btn btn-primary">Get Access</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- SIDEBAR -->
+        <aside class="lesson-sidebar">
+          <!-- RELATED LESSONS -->
+          <div class="sidebar-widget">
+            <h3>Related Lessons</h3>
+            <div id="relatedLessons">
+              <!-- Populated by JavaScript -->
+            </div>
+          </div>
+
+          <!-- TOPICS -->
+          <div class="sidebar-widget">
+            <h3>Topics</h3>
+            <div id="topicTags">
+              <!-- Populated by JavaScript -->
+            </div>
+          </div>
+
+          <!-- LESSON NAVIGATION -->
+          <div class="sidebar-widget">
+            <h3>Navigation</h3>
+            <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+              <button class="btn btn-outline" style="width: 100%;" id="prevBtn" onclick="goToLesson('prev')"> ← Previous</button>
+              <button class="btn btn-outline" style="width: 100%;" id="nextBtn" onclick="goToLesson('next')">Next →</button>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>ParentalAssist</h4>
+          <p>Communication strategies for parents of high school students.</p>
+        </div>
+
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="lessons.html">Video Lessons</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Popular Topics</h4>
+          <ul>
+            <li><a href="lessons.html?topic=defusing">Defusing Arguments</a></li>
+            <li><a href="lessons.html?topic=homework">Homework Battles</a></li>
+            <li><a href="lessons.html?topic=listening">Active Listening</a></li>
+            <li><a href="lessons.html?topic=autonomy">Respecting Autonomy</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 ParentalAssist. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+  <script>
+    let allLessons = [];
+    let currentLesson = null;
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const lessonId = urlParams.get('id') || '001';
+
+      fetch('../content/data/videos.json')
+        .then(response => response.json())
+        .then(data => {
+          allLessons = data.lessons;
+          currentLesson = allLessons.find(lesson => lesson.id === lessonId);
+
+          if (currentLesson) {
+            displayLesson(currentLesson);
+            loadRelatedLessons();
+          } else {
+            document.getElementById('lessonTitle').textContent = 'Lesson Not Found';
+          }
+        });
+    });
+
+    function displayLesson(lesson) {
+      // Update page title
+      document.title = lesson.title + ' - ParentalAssist';
+
+      // Update breadcrumb
+      document.getElementById('lessonBreadcrumb').textContent = lesson.title;
+
+      // Update header
+      document.getElementById('lessonTitle').textContent = lesson.title;
+
+      // Update meta information
+      const metaDiv = document.getElementById('lessonMeta');
+      metaDiv.innerHTML = `
+        <div class="lesson-meta-item">
+          <span>⏱️ ${lesson.duration}</span>
+        </div>
+        <div class="lesson-meta-item">
+          <span>📅 Updated ${new Date(lesson.published).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}</span>
+        </div>
+      `;
+
+      // Video container (YouTube embed)
+      const videoContainer = document.getElementById('videoContainer');
+      videoContainer.innerHTML = `
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/${lesson.youtubeId}" title="${lesson.title}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      `;
+
+      // Summary section
+      const summarySection = document.getElementById('lessonSummarySection');
+      summarySection.innerHTML = `
+        <div class="summary-box">
+          <h3>Lesson Summary</h3>
+          <p>${lesson.fullSummary || lesson.summary}</p>
+        </div>
+      `;
+
+      // Key takeaways
+      const takeawaysSection = document.getElementById('keyTakewaysSection');
+      takeawaysSection.innerHTML = `
+        <div style="margin-top: 2rem;">
+          <h3>Key Takeaways</h3>
+          <ul class="takeaways-list">
+            ${lesson.keyTakeaways.map(takeaway => `<li>${takeaway}</li>`).join('')}
+          </ul>
+        </div>
+      `;
+
+      // Transcript
+      document.getElementById('transcript').innerHTML = lesson.transcript || 'Transcript coming soon.';
+
+      // Topics
+      const topicTags = document.getElementById('topicTags');
+      topicTags.innerHTML = lesson.topics.map(topic => 
+        `<a href="lessons.html?topic=${topic}" class="badge badge-primary" style="display: block; margin-bottom: 0.5rem;">${capitalizeWord(topic)}</a>`
+      ).join('');
+    }
+
+    function loadRelatedLessons() {
+      const currentTopics = currentLesson.topics;
+      const related = allLessons.filter(lesson => 
+        lesson.id !== currentLesson.id && 
+        lesson.topics.some(topic => currentTopics.includes(topic))
+      ).slice(0, 3);
+
+      const relatedContainer = document.getElementById('relatedLessons');
+      if (related.length === 0) {
+        relatedContainer.innerHTML = '<p style="font-size: 14px; color: var(--medium-gray);">No related lessons yet.</p>';
+        return;
+      }
+
+      relatedContainer.innerHTML = related.map(lesson => `
+        <a href="lesson.html?id=${lesson.id}" style="display: block; padding: 0.75rem 0; border-bottom: 1px solid var(--light-gray); color: var(--primary-blue); text-decoration: none;">
+          <strong>${lesson.title}</strong>
+          <br>
+          <span style="font-size: 12px; color: var(--medium-gray);">${lesson.duration}</span>
+        </a>
+      `).join('');
+    }
+
+    function goToLesson(direction) {
+      const currentIndex = allLessons.findIndex(l => l.id === currentLesson.id);
+      let newIndex;
+
+      if (direction === 'prev') {
+        newIndex = currentIndex > 0 ? currentIndex - 1 : allLessons.length - 1;
+      } else {
+        newIndex = currentIndex < allLessons.length - 1 ? currentIndex + 1 : 0;
+      }
+
+      const nextLesson = allLessons[newIndex];
+      window.location.href = `lesson.html?id=${nextLesson.id}`;
+    }
+
+    function capitalizeWord(word) {
+      return word.charAt(0).toUpperCase() + word.slice(1).replace('-', ' ');
+    }
+  </script>
+</body>
+</html>
